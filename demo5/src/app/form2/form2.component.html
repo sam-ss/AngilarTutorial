@@ -1,0 +1,22 @@
+<p>form2 </p>
+<form [formGroup]="myformgrp">
+        Emp Name:= <input type="text" formControlName="empname"  [(ngModel)]="empname" required /> <br />
+        <input type="text" formControlName="salarycn"  [(ngModel)]="empname" required /> <br />
+        Emp no:= <input type="text"   formControlName="empcocn"  name="empno" [(ngModel)]="empno" minlength="4" minlength="4"> <br />
+        <!-- <div *ngIf="myformgrp.controls['empcocn'].invalid && (myformgrp.controls['empno'].touched)"
+    class="alert alert-danger">
+
+      <div *ngIf="myformgrp.controls['empname'].errors.required">
+        Name is reqempuired.
+      </div>
+      <div *ngIf="myformgrp.controls['empcocn'].errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+     
+      <div *ngIf="myformgrp.controls['salarycn'].errors.minlength">
+            Name must be at least 4 characters long.
+          </div>
+      
+    </div>   -->
+    <input type="submit" [disabled]="!myformgrp.valid" value='submit' />
+</form>

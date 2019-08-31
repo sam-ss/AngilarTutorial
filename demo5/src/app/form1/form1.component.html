@@ -1,0 +1,24 @@
+<p>form1 works!</p>
+<button (click)="change()">Buttonclick</button>
+<P>{{str}}</P>
+
+<form #myform="ngForm">
+    Emp Name:= <input type="text" name="empname" #name="ngModel" [(ngModel)]="empname" required /> <br />
+    Emp no:= <input type="text" name="empno" [(ngModel)]="empno" minlength="4" minlength="4"> <br />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+            Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+            Name must be at least 4 characters long.
+        </div>
+
+    </div><br/>
+    Salary:= <input type="text" name="salaray" [(ngModel)]="salaray" /> <br />
+    <input type="submit" [disabled]="!myform.valid" value='submit' />
+
+    {{empno}}
+    {{empname}}
+    {{salaray}}
+</form>
